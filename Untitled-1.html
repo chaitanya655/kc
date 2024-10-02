@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Name with Balloons and Decorations</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow: hidden;
+      background: linear-gradient(45deg, #ff66b2, #66ccff);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 5rem;
+      letter-spacing: 10px;
+      color: #ffffff;
+      animation: colorChange 5s infinite, scaleUp 2s ease-in-out infinite alternate;
+    }
+
+    h1 span {
+      display: inline-block;
+      animation: bounce 1s ease-in-out infinite alternate;
+    }
+
+    .underline {
+      width: 100%;
+      height: 5px;
+      background-color: #ff0066;
+      margin-top: 10px;
+      animation: slideIn 3s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0% { color: #00ccff; }
+      25% { color: #ff0066; }
+      50% { color: #ffcc00; }
+      100% { color: #ffffff; }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+    @keyframes slideIn {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    /* Balloon animation */
+    .balloons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .balloon {
+      position: absolute;
+      background-color: rgba(255, 0, 255, 0.6);
+      border-radius: 50%;
+      width: 40px;
+      height: 60px;
+      animation: floatBalloon 10s ease-in-out infinite;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.7);
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes floatBalloon {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      50% { transform: translateY(-10vh) rotate(10deg); }
+      100% { transform: translateY(-100vh) rotate(0deg); }
+    }
+
+    /* Different balloon positions */
+    .balloon:nth-child(1) {
+      left: 20%;
+      animation-duration: 12s;
+      background-color: #ff6666;
+    }
+
+    .balloon:nth-child(2) {
+      left: 40%;
+      animation-duration: 15s;
+      background-color: #66ff66;
+    }
+
+    .balloon:nth-child(3) {
+      left: 60%;
+      animation-duration: 9s;
+      background-color: #6666ff;
+    }
+
+    .balloon:nth-child(4) {
+      left: 80%;
+      animation-duration: 14s;
+      background-color: #ffcc66;
+    }
+
+    /* Star decorations */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      background-color: white;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+      animation: twinkling 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkling {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    .star:nth-child(1) {
+      left: 10%;
+      top: 20%;
+    }
+
+    .star:nth-child(2) {
+      left: 30%;
+      top: 40%;
+    }
+
+    .star:nth-child(3) {
+      left: 50%;
+      top: 10%;
+    }
+
+    .star:nth-child(4) {
+      left: 70%;
+      top: 30%;
+    }
+
+    .star:nth-child(5) {
+      left: 90%;
+      top: 50%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <div class="balloons">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+  </div>
+
+  <div class="container">
+    <h1>
+      <span>K</span><span>e</span><span>e</span><span>r</span><span>t</span><span>h</span><span>a</span><span>n</span><span>a</span>
+    </h1>
+    <div class="underline"></div>
+  </div>
+</body>
+</html>
